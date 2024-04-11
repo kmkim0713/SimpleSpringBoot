@@ -4,7 +4,7 @@ java 17
 
 
 # 로컬 mysql 설치
-create table mytable(
+create table tb_user(
     id int auto_increment primary key,
     user_id varchar(50) not null,
     user_name varchar(50) not null,
@@ -12,4 +12,4 @@ create table mytable(
 );
 
 
-insert into mytable(user_id,user_name) values ('test_id','테스트');
+insert into tb_user(user_id,user_name) values ('test_id','테스트');
