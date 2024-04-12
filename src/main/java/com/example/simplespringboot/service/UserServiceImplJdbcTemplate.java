@@ -25,7 +25,7 @@ public class UserServiceImplJdbcTemplate implements UserService{
     }
 
     @Override
-    public List<User> getByUserName(String name) {
+    public List<User> getByUserName(String userName) {
 
         List<User> users = jdbcTemplate.query("select * from tb_user where user_name = ?",
                 (resultSet, rowNum) -> {
@@ -35,18 +35,14 @@ public class UserServiceImplJdbcTemplate implements UserService{
                     user.setUserName(resultSet.getString("user_name"));
                     user.setCreateDt(resultSet.getTimestamp("create_dt").toLocalDateTime());
                     return user;
-                }, name);
+                }, userName);
 
         return users;
     }
 
     @Override
-    public int deleteByUserName(String name) {
-        return 0;
+    public int deleteByUserName(String userName) {
+        return jdbcTemplate.update("delete from tb_user where user_name = ?", userName);
     }
 
-    @Override
-    public int getAllUsers() {
-        return 0;
-    }
 }
