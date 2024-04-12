@@ -1,17 +1,23 @@
 package com.example.simplespringboot.service;
 
 import com.example.simplespringboot.dao.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
 
+import javax.sql.DataSource;
 import java.util.List;
 
+@Service
+@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 public class UserServiceImplJdbcTemplate implements UserService{
 
     private JdbcTemplate jdbcTemplate;
 
-    UserServiceImplJdbcTemplate(JdbcTemplate jdbcTemplate){
-        this.jdbcTemplate = jdbcTemplate;
+    public UserServiceImplJdbcTemplate(DataSource dataSource){
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
+
 
     @Override
     public int createUser(String userId, String userName) {

@@ -1,0 +1,6 @@
+http://localhost:8080/rest/select
+Content-Type: application/json
+
+{
+
+}
