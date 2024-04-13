@@ -1,8 +1,10 @@
-package com.example.simplespringboot.controller;
+package com.example.simplespringboot.jdbc.controller;
 
 
-import com.example.simplespringboot.dao.User;
-import com.example.simplespringboot.service.UserServiceImplJdbcTemplate;
+
+import com.example.simplespringboot.jdbc.dao.User;
+import com.example.simplespringboot.jdbc.service.UserServiceImplJdbcTemplate;
+
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,22 +14,22 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/rest")
-public class MainRestController {
+public class MainJdbcRestController {
 
     private UserServiceImplJdbcTemplate userServiceImplJdbcTemplate;
 
-    public MainRestController(UserServiceImplJdbcTemplate userServiceImplJdbcTemplate){
+    public MainJdbcRestController(UserServiceImplJdbcTemplate userServiceImplJdbcTemplate){
         this.userServiceImplJdbcTemplate = userServiceImplJdbcTemplate;
     }
 
-    @RequestMapping("/create")
+    @RequestMapping("/jdbc/create")
     public int createUser(HttpServletRequest httpServletRequest, @RequestBody User user){
         System.out.println("[create]");
         return userServiceImplJdbcTemplate.createUser(user.getUserId(), user.getUserName());
     }
 
 
-    @RequestMapping("/select")
+    @RequestMapping("/jdbc/select")
     public List<User> selectUsers(HttpServletRequest httpServletRequest){
         System.out.println("[select]");
         List<User> users = userServiceImplJdbcTemplate.getByUserName("테스트");
@@ -35,11 +37,10 @@ public class MainRestController {
         return users;
     }
 
-    @RequestMapping("/delete")
+    @RequestMapping("/jdbc/delete")
     public int deleteUser(HttpServletRequest httpServletRequest, @RequestBody User user){
         System.out.println("[delete]");
         return userServiceImplJdbcTemplate.deleteByUserName(user.getUserName());
     }
-
 
 }

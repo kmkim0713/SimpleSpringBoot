@@ -1,6 +1,6 @@
-http://localhost:8080/rest/select
+POST http://localhost:8080/rest/jpa/select
 Content-Type: application/json
 
 {
-
+    "user_name" : "테스트"
 }

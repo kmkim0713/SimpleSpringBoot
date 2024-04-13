@@ -1,4 +1,4 @@
-package com.example.simplespringboot.dao;
+package com.example.simplespringboot.jdbc.dao;
 
 import lombok.Getter;
 import lombok.Setter;

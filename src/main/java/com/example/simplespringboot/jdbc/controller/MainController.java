@@ -1,10 +1,11 @@
-package com.example.simplespringboot.controller;
+package com.example.simplespringboot.jdbc.controller;
 
 
-import com.example.simplespringboot.common.HttpUtility;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.simplespringboot.common.HttpUtility;
 
 
 @Controller

@@ -1,6 +1,6 @@
-package com.example.simplespringboot.service;
+package com.example.simplespringboot.jdbc.service;
 
-import com.example.simplespringboot.dao.User;
+import com.example.simplespringboot.jdbc.dao.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 

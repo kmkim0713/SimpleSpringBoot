@@ -1,6 +1,6 @@
-package com.example.simplespringboot.service;
+package com.example.simplespringboot.jdbc.service;
 
-import com.example.simplespringboot.dao.User;
+import com.example.simplespringboot.jdbc.dao.User;
 
 import java.util.List;
 
