@@ -13,3 +13,11 @@ create table tb_user(
 
 
 insert into tb_user(user_id,user_name) values ('test_id','테스트');
+
+
+# docker mysql vim 설치
+microdnf install -y vim
+
+# mysql 한글 깨짐 현상 확인시
+# locale 설정 후 재시작 https://0soo.tistory.com/239
+docker run --name mysql-test -e MYSQL_ROOT_PASSWORD=1234 -e LC_ALL=C.UTF-8 -p 3306:3306 -it -d mysql:latest

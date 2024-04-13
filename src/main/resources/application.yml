@@ -1,5 +1,8 @@
 # JPA
 spring:
+  output:
+    ansi:
+      enabled: always # 로그별 색상 차이 설정
   application:
     name: SimpleSpringBoot
   datasource: # jdbc
