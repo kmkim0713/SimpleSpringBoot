@@ -1,7 +1,6 @@
 package com.example.simplespringboot.service;
 
 import com.example.simplespringboot.dao.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 

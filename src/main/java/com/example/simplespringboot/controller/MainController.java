@@ -2,13 +2,10 @@ package com.example.simplespringboot.controller;
 
 
 import com.example.simplespringboot.common.HttpUtility;
-import com.example.simplespringboot.dao.User;
-import com.example.simplespringboot.service.UserServiceImplJdbcTemplate;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
 
 @Controller
 @RequestMapping("/")
